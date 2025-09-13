@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lionel Messi</title>
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      width: 900px;
+      margin: auto;
+    }
+    #header {
+      background-color: #54a9f8;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+    #header img {
+      height: 100px;
+    }
+    #slogan {
+      flex: 1;
+      text-align: right;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #menu {
+      background-color: rgb(170, 192, 252);
+      height: 600px;
+      width: 200px;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #menu a {
+      display: block;
+      margin: 15px 0;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
+    }
+    #content {
+      background-color: #eeeeee;
+      height: 600px;
+      width: 680px;   /* 900px - 200px menu - 20px margen */
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+    #footer {
+      background-color: #224aff;
+      clear: both;
+      text-align: center;
+      padding: 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+
+  <!-- HEADER -->
+  <div id="header">
+    <img src="messimaqueta.png" alt="Messi">
+    <div id="slogan">Lionel Messi - El mejor de la historia</div>
+  </div>
+
+  <!-- MENÚ -->
+  <div id="menu">
+    <b>Menú</b><br><br>
+    <a onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a onclick="mostrarSeccion('biografia')">Biografía</a>
+    <a onclick="mostrarSeccion('galeria')">Galería</a>
+    <a onclick="mostrarSeccion('obras')">Obras</a>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div id="content">
+    <h2>Inicio</h2>
+    <p>Bienvenido a la página dedicada a Lionel Messi. Aquí encontrarás su biografía, 
+       una galería de imágenes y sus obras futbolísticas más memorables.</p>
+    <img src="messimaqueta.png" alt="Messi Inicio" style="width:250px; height:auto;">
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer">
+    Karol Mtz Resendiz © 2025
+  </div>
+
+</div>
+
+<script>
+  function mostrarSeccion(seccion) {
+    let content = document.getElementById("content");
+
+    if (seccion === "inicio") {
+      content.innerHTML = `
+        <h2>Inicio</h2>
+        <p>Bienvenido a la página dedicada a Lionel Messi. Aquí encontrarás su biografía, 
+           una galería de imágenes y sus obras futbolísticas más memorables.</p>
+        <img src="messimaqueta.png" alt="Messi Inicio" style="width:400px; height:auto;">
+      `;
+    }
+
+    if (seccion === "biografia") {
+      content.innerHTML = `
+        <h2>Biografía</h2>
+        <p>Lionel Andrés Messi Cuccittini nació en Rosario, Argentina, en 1987. 
+           Desde pequeño mostró un talento extraordinario para el fútbol. 
+           A los 13 años se trasladó a España para unirse al FC Barcelona, 
+           donde jugó la mayor parte de su carrera profesional.</p>
+        <p>Messi ha ganado múltiples Balones de Oro, Champions League, ligas españolas 
+           y finalmente logró coronarse campeón del mundo con Argentina en Qatar 2022.</p>
+        <img src="messibiblio2.png" width="500">
+      `;
+    }
+
+    if (seccion === "galeria") {
+      content.innerHTML = `
+        <h2>Galería</h2>
+        <p>Aquí algunas imágenes icónicas de Lionel Messi:</p>
+        <img src="messi1.png" width="300">
+        <img src="messi20.jpg" width="300">
+        <img src="messi24.png" width="300">
+      `;
+    }
+
+   if (seccion === "obras") {
+  content.innerHTML = `
+    <h2>Obras (Mejores Goles)</h2>
+    <p>Messi ha marcado goles inolvidables en su carrera. Algunos de los más recordados son:</p>
+    <ul>
+      <li>Gol contra el Getafe (2007), parecido al de Maradona.</li>
+      <li>Gol de tiro libre al Liverpool (2019).</li>
+      <li>Gol en la final del Mundial de Qatar 2022.</li>
+    </ul>
+    <p>Haz clic en la imagen para ver un video con sus mejores goles:</p>
+    
+    <a href="https://www.youtube.com/watch?v=VmfLN-9aHRM" target="_blank">
+      <img src="gol.png" alt="Mejores goles de Messi" width="400">
+    </a>
+  `;
+}
+
+  }
+</script>
+
+</body>
+</html>
